@@ -25,4 +25,85 @@ Create Self-Signed Certificate
 New-SelfSignedCertificate -Type Custom -KeyUsage DigitalSignature -CertStoreLocation "Cert:\CurrentUser\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}") -Subject "CN=AVD, O=MsixAppAttach, C=US" -FriendlyName "As per your requirement"
 3. Open certmgr.msc from the Start menu
 4. Expand Personal > Right-click on certificate > All Tasks > Export
+ 
 
+
+
+5. Select 'Yes, export the private key'
+ 
+6. Choose format options as required
+ 
+7. Set a password and proceed
+ 
+8. Choose location to save the PFX file.
+4.	Select desired location to save PFX 
+  
+  
+8.	Complete wizard 
+  
+  
+
+Download .MSI
+1.	Download the MSI of the desired program to create the package
+
+ 
+
+Create MSIX Package
+1.	Install MSIX Packaging Tool from Microsoft Store
+
+2. Open MSIX Packaging Tool and select 'Application package'
+ 
+
+
+2.	Select 'Create package on this computer' > Next
+ 
+
+
+3.	Confirm driver is installed and Windows Update/Search is disabled > Next
+ 
+
+
+
+
+
+
+4.	Browse to MSI, select signing preference and PFX file, enter password
+ 
+
+5.	Fill in package information manually if not auto-filled
+ 
+7. Install the program
+ 
+8. Restart machine if required or click Next
+ 
+9. Package will be listed > Next
+ 
+10. Click Yes to proceed
+ 
+11. Review package report > Next
+ 
+12. Choose location to save package > Create
+ 
+13. Package created successfully
+ 
+
+Create VHD or VHDX Package for MSIX
+Note: Requires Hyper-V role installed
+1. Follow Create a VHD or VHDX package for MSIX 
+2. Example 
+ 
+Expand MSIX Package
+1. Follow Expand MSIX 
+2. Example 
+ 
+3. Detach VHD after completion
+
+Add Package to Host Pool
+1. Go to Hostpool > MSIX packages > Select Add
+2. Enter UNC path to VHD and details should populate
+ 
+3.  Enter display name, change state to Active, and select Add\
+
+
+
+ 
