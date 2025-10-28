@@ -1,0 +1,3 @@
+$domainInformation = Get-ADDomain
+$domainGuid = $domainInformation.ObjectGUID.ToString()
+$domainName = $domainInformation.DnsRoot
